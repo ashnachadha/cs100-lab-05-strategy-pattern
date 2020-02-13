@@ -1,6 +1,7 @@
 #ifndef __LISTCONTAINER_HPP__
 #define __LISTCONTAINER_HPP__
 
+#include <iostream>
 #include <list>
 
 #include "sort.hpp"
@@ -17,7 +18,7 @@ protected:
     Sort* sort_function;
     
 private:
-    vector<Base*> table;
+    list<Base*> table;
     
 public:
     /* Constructors */
