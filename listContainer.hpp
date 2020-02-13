@@ -38,7 +38,7 @@ public:
     virtual void print() {
         //(std::list<int>::iterator it=mylist.begin(); it != mylist.end(); ++it)
         for (list<Base*>::iterator i = table.begin(); i != table.end(); ++i) {
-            cout << *i->stringify();
+            cout << (*i)->stringify();
             cout << endl;
         }
     }
@@ -51,20 +51,27 @@ public:
     //switch tree locations
     virtual void swap(int i, int j) {
         list<Base*>::iterator it = table.begin();
-        it = it + i;
+        for (unsigned x = 0; x < i; ++x) {
+            ++it;
+        }
         list<Base*>::iterator jit = table.begin();
-        jit = jit + j;
+        for (unsigned x = 0; x < j; ++x) {
+            ++jit;
+        }
         
         Base* temp = *it;
         it = jit;
-        jit = temp;
+        *jit = temp;
     }
     // get top ptr of tree at index i
     virtual Base* at(int i) {
         list<Base*>::iterator it = table.begin();
-        it = it + i;
         
-        return it;
+        for (unsigned j = 0; j < i; ++j) {
+            ++it;
+        }
+        
+        return *it;
     }
     // return container size
     virtual int size() {
