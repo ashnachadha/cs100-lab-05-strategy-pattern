@@ -8,6 +8,7 @@
 #include "pow_test.hpp"
 #include "rand_test.hpp"
 #include "all_test.hpp"
+#include "listContainer_test.hpp"
 
 int main(int argc, char **argv) {
   ::testing::InitGoogleTest(&argc, argv);
