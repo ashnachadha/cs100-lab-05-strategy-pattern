@@ -45,8 +45,7 @@ TEST(listContainerTest, PrintOpFromList) {
     ListContainer* list = new ListContainer();
     list->add_element(zero);
     
-    ASSERT_EQ(list->size(), 1);
-    EXPECT_EQ(list->at(0)->print(), "0.000000\n");
+    list->print();
 }
 
 #endif //__LISTCONTAINER_TEST_HPP__
