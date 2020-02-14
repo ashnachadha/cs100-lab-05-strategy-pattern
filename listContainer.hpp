@@ -13,7 +13,7 @@ using namespace std;
 class Sort;
 class Base;
 
-class ListContainer {
+class ListContainer : public Container {
 protected:
     Sort* sort_function;
     
@@ -22,12 +22,12 @@ private:
     
 public:
     /* Constructors */
-    ListContainer() : sort_function(nullptr) { };
-    ListContainer(Sort* function) : sort_function(function) { };
+    ListContainer() : Container() { sort_function = nullptr; }
+    ListContainer(Sort* function) : Container() { sort_function = function; }
     
     /* Non Virtual Functions */
-    void set_sort_function(Sort* sort_function) { // set the type of sorting algorithm
-        this sort_function = sort_function;
+    void set_sort_function(Sort* s) { // set the type of sorting algorithm
+        sort_function = s;
     }
     /* Pure Virtual Functions */
     // push the top pointer of the tree into container
@@ -36,7 +36,6 @@ public:
     }
     // iterate through trees and output the expressions (use stringify())
     virtual void print() {
-        //(std::list<int>::iterator it=mylist.begin(); it != mylist.end(); ++it)
         for (list<Base*>::iterator i = table.begin(); i != table.end(); ++i) {
             cout << (*i)->stringify();
             cout << endl;

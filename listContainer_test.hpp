@@ -9,7 +9,7 @@
 TEST(listContainerTest, AddOpToList) {
     Op* zero = new Op(0);
     ListContainer* list = new ListContainer();
-    list.add_element(zero);
+    list->add_element(zero);
     
     ASSERT_EQ(list->size(), 1);
     EXPECT_EQ(list->at(0)->evaluate(), 0);
