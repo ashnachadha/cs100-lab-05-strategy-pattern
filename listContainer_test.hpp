@@ -6,6 +6,8 @@
 #include "op.hpp"
 #include "add.hpp"
 #include "listContainer.hpp"
+#include "selectionSort.hpp"
+
 
 TEST(listContainerTest, AddOpToList) {
     Op* zero = new Op(0);
@@ -108,6 +110,57 @@ TEST(listContainerTest, SizeList) {
     EXPECT_EQ(list->size(), 4);
 }
 
+TEST(selectionSortTest, SortListContainer){
+    Op* five = new Op(5);
+    Op* two = new Op(2);
+    Op* three = new Op(3);
+
+    SelectionSort* sorter = new SelectionSort();
+    ListContainer* list = new ListContainer(sorter);
+
+    list->add_element(five);
+    list->add_element(two);
+    list->add_element(three);
+
+    ASSERT_EQ(list->size(), 3);
+    EXPECT_EQ(list->at(0)->evaluate(), 5);
+    EXPECT_EQ(list->at(1)->evaluate(), 2);
+    EXPECT_EQ(list->at(2)->evaluate(), 3);
+ 
+    list->sort();
+
+    ASSERT_EQ(list->size(), 3);
+    EXPECT_EQ(list->at(0)->evaluate(), 2);
+    EXPECT_EQ(list->at(1)->evaluate(), 3);
+    EXPECT_EQ(list->at(2)->evaluate(), 5);
+}
+
+/*
+TEST(bubbleSortTest, SortListContainer){
+    Op* five = new Op(5);
+    Op* two = new Op(2);
+    Op* three = new Op(3);
+
+    BubbleSort* sorter = new BubbleSort();
+    ListContainer* list = new ListContainer(sorter);
+
+    list->add_element(five);
+    list->add_element(two);
+    list->add_element(three);
+
+    ASSERT_EQ(list->size(), 3);
+    EXPECT_EQ(list->at(0)->evaluate(), 5);
+    EXPECT_EQ(list->at(1)->evaluate(), 2);
+    EXPECT_EQ(list->at(2)->evaluate(), 3);
+
+    list->sort();
+
+    ASSERT_EQ(list->size(), 3);
+    EXPECT_EQ(list->at(0)->evaluate(), 2);
+    EXPECT_EQ(list->at(1)->evaluate(), 3);
+    EXPECT_EQ(list->at(2)->evaluate(), 5);
+}
+*/
 
 #endif //__LISTCONTAINER_TEST_HPP__
 

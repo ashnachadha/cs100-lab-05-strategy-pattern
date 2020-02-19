@@ -4,12 +4,11 @@
 #include "container.hpp"
 #include "sort.hpp"
 
-class SelectionSort : public Container;
+class SelectionSort : public Sort {
 
-class Sort {
 public:
     /* Constructors */
-    SelectionSort() {}
+    SelectionSort() : Sort() {}
     
     /* Pure Virtual Functions */
     virtual void sort(Container* container) {
@@ -22,7 +21,7 @@ public:
             
             for (unsigned j = i + 1; j < container->size(); ++j) {
                 
-                if (container->at(j) < container->at(minIndex)) {
+                if (container->at(j)->evaluate() < container->at(minIndex)->evaluate()) {
                     minIndex = j;
                 }
                 
@@ -37,5 +36,5 @@ public:
     }
 };
 
-#endif //__SORT_HPP__
+#endif //__SELECTIONSORT_HPP__
 
