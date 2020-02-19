@@ -43,7 +43,10 @@ public:
     }
     // calls on the previously set sorting-algorithm. Checks if sort_function is not null, throw exception if otherwise
     virtual void sort() {
-        sort_function->sort(this);
+        try {
+            sort_function->sort(this);
+        }
+        catch(Sort* sort_funtion) {cout << "Exeption trown";}
     }
     
     /* Essentially the only functions needed to sort */
