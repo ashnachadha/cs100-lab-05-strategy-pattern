@@ -59,7 +59,7 @@ public:
         }
         
         Base* temp = *it;
-        it = jit;
+        *it = *jit;
         *jit = temp;
     }
     // get top ptr of tree at index i
