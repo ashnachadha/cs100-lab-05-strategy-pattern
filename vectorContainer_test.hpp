@@ -12,6 +12,7 @@
 #include "pow.hpp"
 #include "vectorContainer.hpp"
 #include "bubbleSort.hpp"
+#include "selectionSort.hpp"
 
 TEST(vectorContainerTest, AddOpToVector) {
 	Op* zero = new Op(0);
