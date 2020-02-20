@@ -4,7 +4,7 @@
 #include "container.hpp"
 #include "sort.hpp"
 
-class BubbleSort : Sort() {
+class BubbleSort : public Sort {
 
 	public:
 		/* Constructors */
