@@ -20,7 +20,7 @@ class VectorContainer : public Container {
 	public:
 		/* Constructors */
 		VectorContainer() : Container() {sort_function = nullptr;}
-		VectorContainer(Sort* function) : Container() { sort_function = function;
+		VectorContainer(Sort* function) : Container() { sort_function = function; }
 
 		/*Non Virtual Functions */
 		void set_sort_function(Sort* s) {
@@ -47,11 +47,12 @@ class VectorContainer : public Container {
 		virtual void sort()
 		{
 			try {
-				sort_function->sort(this);
-			}
-			catch(Sort* sort_function) {
-				cout << "Exception thrown";
-			}
+                            if (sort_function == nullptr) {
+                               throw 1;
+                            }
+                        sort_function->sort(this);
+                        }
+                        catch(...) {cout << "Exeption trown: sort_function is null" << endl;}
 		}
 
 		//switch tree locations

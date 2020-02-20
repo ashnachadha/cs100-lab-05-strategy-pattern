@@ -63,7 +63,7 @@ TEST(vectorContainerTest, PrintMultipleBasesFromVector) {
 	Base* add = new Add(four, three);
 	Base* div = new Div(zero, add);
 
-	VectorContaienr* vector = new VectorContainer();
+	VectorContainer* vector = new VectorContainer();
 	vector->add_element(zero);
 	vector->add_element(four);
 	vector->add_element(add);
@@ -88,7 +88,7 @@ TEST(vectorContainerTest, SwapVector) {
 	
 	ASSERT_EQ(vector->size(), 2);
 	EXPECT_EQ(vector->at(0)->evaluate(), 6);
-	EXPECT_EQ(vector->at(0)->evaluate(), 3);
+	EXPECT_EQ(vector->at(1)->evaluate(), 3);
 }
 
 TEST(vectorContainerTest, SizeList) {
@@ -124,14 +124,14 @@ TEST(bubbleSortTest, SortOpBaseVectorContainer) {
 
 	ASSERT_EQ(vector->size(), 3);
 	EXPECT_EQ(vector->at(0)->evaluate(), 5);
-	EXPECT_EQ(vector->at(1)->evalute(), 2);
+	EXPECT_EQ(vector->at(1)->evaluate(), 2);
 	EXPECT_EQ(vector->at(2)->evaluate(), 3);
 
 	vector->sort();
 
 	ASSERT_EQ(vector->size(), 3);
 	EXPECT_EQ(vector->at(0)->evaluate(), 2);
-	EXPECT_EQ(vector->at(1)->evalute(), 3);
+	EXPECT_EQ(vector->at(1)->evaluate(), 3);
         EXPECT_EQ(vector->at(2)->evaluate(), 5);
 }
 
@@ -150,14 +150,14 @@ TEST(bubbleSortTest, SetSortOpBaseVectorContainer) {
 
 	ASSERT_EQ(vector->size(), 3);
         EXPECT_EQ(vector->at(0)->evaluate(), 5);
-        EXPECT_EQ(vector->at(1)->evalute(), 2);
+        EXPECT_EQ(vector->at(1)->evaluate(), 2);
         EXPECT_EQ(vector->at(2)->evaluate(), 3);
 
         vector->sort();
 
         ASSERT_EQ(vector->size(), 3);
         EXPECT_EQ(vector->at(0)->evaluate(), 2);
-        EXPECT_EQ(vector->at(1)->evalute(), 3);
+        EXPECT_EQ(vector->at(1)->evaluate(), 3);
         EXPECT_EQ(vector->at(2)->evaluate(), 5);
 }
 
