@@ -115,7 +115,7 @@ TEST(listContainerTest, SizeList) {
     EXPECT_EQ(list->size(), 4);
 }
 
-TEST(listConatainerTest, SortException) {
+TEST(listContainerTest, SortException) {
     ListContainer* list = new ListContainer();
     list->sort();
 }
@@ -220,9 +220,6 @@ TEST(selectionSortTest, SortListMutipleBaseContainer){
     EXPECT_EQ(list->at(7)->evaluate(), 55);
 }
 
-
-
-/*
 TEST(bubbleSortTest, SortOpListContainer){
     Op* five = new Op(5);
     Op* two = new Op(2);
@@ -320,9 +317,6 @@ TEST(bubbleSortTest, SortListMutipleBaseContainer){
     EXPECT_EQ(list->at(6)->evaluate(), 16);
     EXPECT_EQ(list->at(7)->evaluate(), 55);
 }
-
-
-*/
 
 #endif //__LISTCONTAINER_TEST_HPP__
 
